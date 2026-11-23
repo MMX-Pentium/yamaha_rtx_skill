@@ -53,8 +53,9 @@ flowchart LR
 ```text
 .
 ├── README.md                                  # 本ドキュメント
+├── LICENSE                                    # MIT License
 ├── .gitignore
-└── yamaha-rtx-agent-skill/                    # Agent Skill 本体ディレクトリ
+└── yamaha-rtx-fwx-operator/                   # Agent Skill 本体ディレクトリ（SKILL.md の name と一致）
     ├── SKILL.md                               # Skill 定義（手順・原則・制約）
     ├── README.md                              # Skill ディレクトリ単体向けガイド
     ├── references/
@@ -78,7 +79,7 @@ flowchart LR
 
 ```bash
 git clone https://github.com/MMX-Pentium/yamaha_rtx_skill.git
-cd yamaha_rtx_skill/yamaha-rtx-agent-skill
+cd yamaha_rtx_skill/yamaha-rtx-fwx-operator
 
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
@@ -137,26 +138,26 @@ export RTX_ADMIN_PASSWORD='<administratorパスワード>'
 
 ### 4. AI エージェントへの Skill 導入
 
-お使いの Agent Skills 対応クライアントのスキルディレクトリへ `yamaha-rtx-agent-skill/` を配置（またはシンボリックリンク）してください。
+お使いの Agent Skills 対応クライアントのスキルディレクトリへ `yamaha-rtx-fwx-operator/` を配置（またはシンボリックリンク）してください。Agent Skills 仕様に従い、親ディレクトリ名と `SKILL.md` の `name` は `yamaha-rtx-fwx-operator` で一致しています。
 
 - **Claude Code（プロジェクト単位）**:
   ```bash
   mkdir -p .claude/skills
-  ln -s /path/to/yamaha_rtx_skill/yamaha-rtx-agent-skill .claude/skills/yamaha-rtx-fwx-operator
+  ln -s /path/to/yamaha_rtx_skill/yamaha-rtx-fwx-operator .claude/skills/yamaha-rtx-fwx-operator
   ```
 - **OpenCode（プロジェクト単位）**:
   ```bash
   mkdir -p .opencode/skills
-  ln -s /path/to/yamaha_rtx_skill/yamaha-rtx-agent-skill .opencode/skills/yamaha-rtx-fwx-operator
+  ln -s /path/to/yamaha_rtx_skill/yamaha-rtx-fwx-operator .opencode/skills/yamaha-rtx-fwx-operator
   ```
 - **その他（Codex / Antigravity / 直接参照）**:
-  - 各ツールのスキルディレクトリ（例: `.agents/skills/yamaha-rtx-fwx-operator`）へ配置するか、作業時に `yamaha-rtx-agent-skill/SKILL.md` と `yamaha-rtx-agent-skill/references/yamaha-cli.md` を参照させてください。
+  - 各ツールのスキルディレクトリ（例: `.agents/skills/yamaha-rtx-fwx-operator`）へ配置するか、作業時に `yamaha-rtx-fwx-operator/SKILL.md` と `yamaha-rtx-fwx-operator/references/yamaha-cli.md` を参照させてください。
 
 ---
 
 ## 基本的な使い方（CLI ワークフロー）
 
-`yamaha-rtx-agent-skill/` ディレクトリで実行します。
+`yamaha-rtx-fwx-operator/` ディレクトリで実行します。
 
 ```bash
 # 1. 疎通・機種・Rev・Security Class・文字化け有無を確認
@@ -187,7 +188,7 @@ export RTX_ADMIN_PASSWORD='<administratorパスワード>'
 実機なしで実行できるユニットテストを同梱しています。
 
 ```bash
-cd yamaha-rtx-agent-skill
+cd yamaha-rtx-fwx-operator
 python3 -m unittest discover -s tests -v
 ```
 
@@ -201,6 +202,10 @@ python3 -m unittest discover -s tests -v
 - `console character` / `console lines` 等の一部コンソール設定は未保存のまま切断すると元に戻る実機仕様があるため、`apply` → `save` を別セッションで実行すると差分検知により停止する場合があります。
 
 ---
+
+## ライセンス
+
+[MIT License](LICENSE)
 
 ## 免責事項
 

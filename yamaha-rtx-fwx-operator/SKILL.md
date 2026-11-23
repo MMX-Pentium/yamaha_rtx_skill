@@ -1,6 +1,7 @@
 ---
 name: yamaha-rtx-fwx-operator
 description: Operate Yamaha RTX routers (RTX810 onward including legacy and current models) and FWX120 via SSH, Telnet or serial console; default Shift_JIS decoding, Yamaha-specific CLI semantics, inspection, backup, and approved config changes.
+license: MIT
 ---
 
 # Yamaha RTX / FWX120 実機操作 Skill
@@ -56,7 +57,7 @@ description: Operate Yamaha RTX routers (RTX810 onward including legacy and curr
 
 ## 実行ワークフロー（コマンド例）
 
-実行前に `.venv/bin/python` が存在するか確認し、あれば `.venv/bin/python`、なければ `python3` を使用する。以下は `yamaha-rtx-agent-skill/` ディレクトリ直下で実行する例。
+実行前に `.venv/bin/python` が存在するか確認し、あれば `.venv/bin/python`、なければ `python3` を使用する。以下は `yamaha-rtx-fwx-operator/` ディレクトリ直下で実行する例。
 
 ```bash
 # 環境変数でパスワードを渡す（未設定機器は空可）
