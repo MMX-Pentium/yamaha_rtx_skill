@@ -1,0 +1,2 @@
+# 検証用の例。実機で使用する前に機種・ファームウェア・設定と影響を確認すること。
+description 1 Agent-managed lab router

@@ -1,0 +1,38 @@
+{
+  "devices": {
+    "rtx810-lab": {
+      "transport": "ssh",
+      "host": "192.0.2.10",
+      "port": 22,
+      "username": "operator",
+      "encoding": "shift_jis"
+    },
+    "fwx120-console": {
+      "transport": "serial",
+      "port": "/dev/ttyUSB0",
+      "baudrate": 9600,
+      "encoding": "shift_jis",
+      "username": "operator"
+    },
+    "rtx3510-console": {
+      "transport": "serial",
+      "port": "COM3",
+      "baudrate": 9600,
+      "encoding": "shift_jis",
+      "username": "operator"
+    },
+    "rtx810-telnet": {
+      "transport": "telnet",
+      "host": "192.0.2.11",
+      "port": 23,
+      "username": "operator",
+      "encoding": "shift_jis"
+    },
+    "fwx120-telnet": {
+      "transport": "telnet",
+      "host": "192.0.2.12",
+      "port": 23,
+      "encoding": "shift_jis"
+    }
+  }
+}

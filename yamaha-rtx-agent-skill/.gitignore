@@ -1,0 +1,5 @@
+inventory.json
+private/
+.venv/
+__pycache__/
+*.pyc
